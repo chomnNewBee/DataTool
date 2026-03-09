@@ -1,0 +1,582 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/><title>字段名对照表</title><style>
+/* 基础布局与配色（主色: 蓝 / 中性色: 灰） */
+body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:18px;background:#f8fafc;color:#1e293b;}
+h1{font-size:22px;margin:6px 0 14px;font-weight:600;color:#0f172a;}
+section{margin-top:28px;}
+.search-box{margin:12px 0 18px;}
+.search-box input{width:360px;padding:8px 10px;font-size:14px;border:1px solid #cbd5e1;background:#fff;}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:1080px;font-size:13px;background:#fff;border:1px solid #d0d7e2;}
+thead th{background:linear-gradient(90deg,#2563eb,#1d4ed8);color:#fff;font-weight:500;letter-spacing:.5px;font-size:12.5px;border:none;position:sticky;top:0;z-index:2;}
+th,td{padding:6px 10px;text-align:left;line-height:1.35;border-bottom:1px solid #e2e8f0;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:nth-child(even){background:#f1f5f9;}
+tbody tr:hover{background:#e0f2fe;}
+code{background:#eff6ff;padding:2px 6px;font-size:12px;color:#1e3a8a;border:1px solid #bfdbfe;}
+.category td{background:#334155 !important;color:#fff;font-weight:600;font-size:12px;letter-spacing:.5px;}
+.hide{display:none;}
+.param-value-a{background:#dbeafe !important;color:#1d4ed8 !important;font-weight:600 !important;font-size:12px;}
+.param-value-b{background:#d1fae5 !important;color:#047857 !important;font-weight:600 !important;font-size:12px;}
+.param-value-b.diff{background:#fecaca !important;color:#dc2626 !important;}
+.has-data-a{border-left:3px solid #2563eb;}
+.has-data-b{border-left:3px solid #059669;}
+.has-data-both{border-left:3px solid #7c3aed;}
+.has-diff{border-left:3px solid #dc2626;}
+.no-data{opacity:0.3;}
+button{transition:background-color 0.2s;}
+button:hover{opacity:0.9;}
+#paramInput1,#paramInput2{font-family:Monaco,Consolas,monospace;}
+</style></head><body>
+<h1>字段名对照表 (原始Key / 中文释义)</h1>
+<div class="search-box">
+<input id="kw" placeholder="输入关键字过滤 (英文 / 中文 / key)"/>
+</div>
+
+<!-- 参数解析输入框 -->
+<div style="margin:16px 0;padding:12px;background:#f1f5f9;border:1px solid #e2e8f0;">
+<div style="margin-bottom:8px;font-weight:600;color:#334155;">参数解析对比工具</div>
+
+<!-- 第一组输入 -->
+<div style="margin-bottom:12px;">
+<div style="margin-bottom:4px;font-size:13px;color:#374151;font-weight:500;">参数组 A:</div>
+<input id="paramInput1" placeholder="输入参数字符串A，如: tw=97.40&fs_total=15&w=250" style="width:100%;padding:6px 8px;border:1px solid #cbd5e1;font-size:13px;font-family:Monaco,Consolas,monospace;"/>
+</div>
+
+<!-- 第二组输入 -->
+<div style="margin-bottom:12px;">
+<div style="margin-bottom:4px;font-size:13px;color:#374151;font-weight:500;">参数组 B:</div>
+<input id="paramInput2" placeholder="输入参数字符串B，如: tw=85.20&fs_total=12&w=180" style="width:100%;padding:6px 8px;border:1px solid #cbd5e1;font-size:13px;font-family:Monaco,Consolas,monospace;"/>
+</div>
+
+<!-- 控制按钮和选项 -->
+<div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">
+<button id="clearBtn" style="padding:6px 12px;background:#dc2626;color:#fff;border:none;cursor:pointer;font-size:13px;">清空</button>
+</div>
+
+<div id="parseResult" style="font-size:12px;color:#666;min-height:16px;"></div>
+</div>
+<table id="ft"><colgroup>
+<col style="width:5%"/>
+<col style="width:25%"/>
+<col style="width:15%"/>
+<col style="width:35%"/>
+<col style="width:10%"/>
+<col style="width:10%"/>
+</colgroup><thead><tr><th>#</th><th>英文名称</th><th>原始Key</th><th>中文释义</th><th style="background:#2563eb;">参数A</th><th style="background:#059669;">参数B</th></tr></thead><tbody>
+<!-- 基础字段 -->
+<tr><td>1</td><td>line</td><td><code>l</code></td><td>线数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>2</td><td>winWayGroups</td><td><code>wlc_v</code></td><td>中奖线路/方式分组</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>3</td><td>coin</td><td><code>c</code></td><td>投注币值</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>4</td><td>defaultBet</td><td><code>defc</code></td><td>默认投注档</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>5</td><td>coinID</td><td><code>cid</code></td><td>币种ID</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>6</td><td>tryMeOnceCoin</td><td><code>tmc</code></td><td>试玩币值</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>7</td><td>tryMeOnceLine</td><td><code>tml</code></td><td>试玩线数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>8</td><td>winAmountShort</td><td><code>w</code></td><td>单次中奖金额</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>9</td><td>extraAwardWin</td><td><code>e_aw</code></td><td>额外奖励金额</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>10</td><td>randomWildsData</td><td><code>rwd</code></td><td>随机Wild数据</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>11</td><td>upSymbols</td><td><code>ups</code></td><td>上升符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>12</td><td>expandingSymbolsData</td><td><code>ep</code></td><td>扩展符号数据</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>13</td><td>symbolsBeforeExpanding</td><td><code>is</code></td><td>扩展前符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>14</td><td>winSymbols</td><td><code>s</code></td><td>中奖符号集合</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>15</td><td>balance</td><td><code>balance</code></td><td>余额</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>16</td><td>cashBalance</td><td><code>balance_cash</code></td><td>现金余额</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>17</td><td>bonusBalance</td><td><code>balance_bonus</code></td><td>奖金余额</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>18</td><td>time</td><td><code>stime</code></td><td>服务器时间</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>19</td><td>reelsPosition</td><td><code>pos</code></td><td>卷轴位置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>20</td><td>index</td><td><code>index</code></td><td>协议序号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>21</td><td>counter</td><td><code>counter</code></td><td>协议计数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>22</td><td>repeat</td><td><code>repeat</code></td><td>重复标记</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>23</td><td>respin</td><td><code>rs</code></td><td>重转状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>24</td><td>respinCycleWin</td><td><code>rs_win</code></td><td>重转周期赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>25</td><td>currentRespin</td><td><code>rs_c</code></td><td>当前重转次数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>26</td><td>maxRespins</td><td><code>rs_m</code></td><td>最大重转次数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>27</td><td>totalRespins</td><td><code>rs_t</code></td><td>本局累计重转</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>28</td><td>progressiveFeature</td><td><code>progressive</code></td><td>累积奖功能块</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>29</td><td>stickySymbols</td><td><code>sty</code></td><td>粘性符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>30</td><td>mergingSymbols</td><td><code>mrg</code></td><td>合并符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 免费游戏相关 -->
+<tr><td>31</td><td>freeSpinsOptions</td><td><code>fs_opt</code></td><td>免费旋转选项</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>32</td><td>freeSpinsOptionsMask</td><td><code>fs_opt_mask</code></td><td>免费旋转选项掩码</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>33</td><td>randomWildWinSymbolId</td><td><code>rws</code></td><td>随机Wild中奖符号ID</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>34</td><td>freeSpinsPickedOptionIndex</td><td><code>fsopt_i</code></td><td>免费旋转选择项索引</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>35</td><td>freeSpinCurrentNumber</td><td><code>fs</code></td><td>当前免费旋转次数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>36</td><td>freeSpinMaxNumber</td><td><code>fsmax</code></td><td>最大免费旋转次数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>37</td><td>freeSpinTotalNumber</td><td><code>fs_total</code></td><td>累计免费旋转次数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>38</td><td>freeSpinCurrentWin</td><td><code>fswin</code></td><td>免费游戏当前赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>39</td><td>freeSpinTotalWin</td><td><code>fswin_total</code></td><td>免费游戏总赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>40</td><td>freeSpinCurrentMultiplier</td><td><code>fsmul</code></td><td>免费游戏当前倍数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>41</td><td>freeSpinTotalMultipl</td><td><code>fsmul_total</code></td><td>免费游戏总倍数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>42</td><td>freeSpinCurrentWinMultiplied</td><td><code>fsres</code></td><td>免费游戏当前倍数结果</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>43</td><td>freeSpinTotalWinMultiplied</td><td><code>fsres_total</code></td><td>免费游戏总倍数结果</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 游戏配置 -->
+<tr><td>44</td><td>bets</td><td><code>sc</code></td><td>投注配置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>45</td><td>paytable</td><td><code>paytable</code></td><td>赔付表</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>46</td><td>scatters</td><td><code>scatters</code></td><td>Scatter符号配置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>47</td><td>wilds</td><td><code>wilds</code></td><td>Wild符号配置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>48</td><td>bonuses</td><td><code>bonuses</code></td><td>奖金符号配置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>49</td><td>symbol</td><td><code>symbol</code></td><td>符号定义</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 系统相关 -->
+<tr><td>50</td><td>clientVersion</td><td><code>cver</code></td><td>客户端版本</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>51</td><td>mgckey</td><td><code>mgckey</code></td><td>魔术密钥</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>52</td><td>noRating</td><td><code>noRating</code></td><td>无评级标记</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 卷轴系统 -->
+<tr><td>53</td><td>stackedSymbolIndex</td><td><code>n_rss</code></td><td>下个堆叠符号索引</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>54</td><td>stackedSymbolIndexCurrent</td><td><code>rss</code></td><td>当前堆叠符号索引</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>55</td><td>reelSetIndex</td><td><code>n_reel_set</code></td><td>下个卷轴集索引</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>56</td><td>reelSetIndexCurrent</td><td><code>reel_set</code></td><td>当前卷轴集索引</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>57</td><td>numberOfReelSets</td><td><code>reel_set_size</code></td><td>卷轴集数量</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>58</td><td>ReelsAllowedToRotateSeparately</td><td><code>sor_ra</code></td><td>允许独立旋转的卷轴</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>59</td><td>ReelsCoeficients</td><td><code>sor_coefs</code></td><td>卷轴系数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>60</td><td>ReelToBeSpun</td><td><code>sor_ri</code></td><td>待旋转卷轴</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>61</td><td>NextReelsSymbolsList</td><td><code>n_rsl</code></td><td>下轮卷轴符号列表</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 乘数与随机功能 -->
+<tr><td>62</td><td>wildRandomMultipliers</td><td><code>wdrm_v</code></td><td>Wild随机倍数值</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>63</td><td>wildRandomMultiplierMask</td><td><code>wdrm_m</code></td><td>Wild随机倍数掩码</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>64</td><td>randomSymbolMultiplier</td><td><code>rmul</code></td><td>随机符号倍数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>65</td><td>randomMysterySymbol</td><td><code>msr</code></td><td>随机神秘符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>66</td><td>initialMysterySymbol</td><td><code>msi</code></td><td>初始神秘符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>67</td><td>patternedMysterySymbols</td><td><code>msi_p</code></td><td>图案化神秘符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>68</td><td>possibleRandomSymbolMultipliers</td><td><code>prm</code></td><td>可能的随机符号倍数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>69</td><td>mysteryExpandingSymbols</td><td><code>mes</code></td><td>神秘扩展符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>70</td><td>mysteryExpandingPositions</td><td><code>me</code></td><td>神秘扩展位置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 特殊功能 -->
+<tr><td>71</td><td>naSymbolId</td><td><code>nas</code></td><td>无效符号ID</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>72</td><td>nudgedSymbols</td><td><code>sn</code></td><td>微调符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>73</td><td>symbolReplacementData</td><td><code>srf</code></td><td>符号替换数据</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>74</td><td>TumblingWin</td><td><code>tmb_win</code></td><td>瀑布连消中奖</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>75</td><td>Tumbling</td><td><code>tmb</code></td><td>瀑布连消状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>76</td><td>FeaturePurchaseParam</td><td><code>pur</code></td><td>功能购买参数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>77</td><td>gameplayIndex</td><td><code>ind</code></td><td>游戏进程索引</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 免费游戏购买 -->
+<tr><td>78</td><td>FreeSpinsPurchase.purchaseOptions</td><td><code>fspps</code></td><td>免费游戏购买选项</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>79</td><td>FreeSpinsPurchase.purchaseOptionsMask</td><td><code>fspps_mask</code></td><td>免费游戏购买选项掩码</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>80</td><td>FreeSpinsPurchase.optionIndex</td><td><code>fsp</code></td><td>免费游戏购买选项索引</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>81</td><td>FreeSpinsPurchase.fsBought</td><td><code>fs_bought</code></td><td>已购买免费游戏状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 投注等级系统 -->
+<tr><td>82</td><td>BetLevel.betLevelScale</td><td><code>bls</code></td><td>投注等级比例</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>83</td><td>BetLevel.betLevelIndex</td><td><code>bl</code></td><td>投注等级索引</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>84</td><td>BetLevel.betLevelPaytable</td><td><code>bl_paytable</code></td><td>投注等级赔付表</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 开启符号 -->
+<tr><td>85</td><td>OpeningSymbols.positions</td><td><code>i_pos</code></td><td>开启位置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>86</td><td>OpeningSymbols.freeSpinsWon</td><td><code>win_fs</code></td><td>赢得免费旋转</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>87</td><td>OpeningSymbols.multiplierWon</td><td><code>win_mul</code></td><td>赢得倍数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 上下符号 -->
+<tr><td>88</td><td>TopBottomSymbols.symbolsAbove</td><td><code>sa</code></td><td>上方符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>89</td><td>TopBottomSymbols.symbolsBelow</td><td><code>sb</code></td><td>下方符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 免费旋转链 -->
+<tr><td>90</td><td>FreeSpinsChain.spins</td><td><code>fscs</code></td><td>链式旋转次数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>91</td><td>FreeSpinsChain.multipliers</td><td><code>fscm</code></td><td>链式倍数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>92</td><td>FreeSpinsChain.spinsTotal</td><td><code>fsc_total</code></td><td>链式旋转总数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>93</td><td>FreeSpinsChain.multipliersTotal</td><td><code>fsc_mul_total</code></td><td>链式倍数总和</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>94</td><td>FreeSpinsChain.winsTotal</td><td><code>fsc_win_total</code></td><td>链式中奖总和</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>95</td><td>FreeSpinsChain.multipliedWinTotal</td><td><code>fsc_res_total</code></td><td>链式倍数结果总和</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>96</td><td>FreeSpinsChain.sessionsWonThisSpin</td><td><code>fsc_sw</code></td><td>本轮赢得的会话</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>97</td><td>FreeSpinsChain.sessionsWonSymbolsCount</td><td><code>fsc_sessions</code></td><td>赢得会话符号数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 动态函数字段 -->
+<tr><td>98</td><td>winLines(i)</td><td><code>l{i}</code></td><td>中奖线函数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>99</td><td>reel(i)</td><td><code>reel{i}</code></td><td>卷轴函数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>100</td><td>n_reel(i)</td><td><code>n_reel{i}</code></td><td>下轮卷轴函数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>101</td><td>reelSet(i)</td><td><code>reel_set{i}</code></td><td>卷轴集函数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 状态标记 -->
+<tr><td>102</td><td>frozen</td><td><code>frozen</code></td><td>冻结状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>103</td><td>techbreak</td><td><code>techbreak</code></td><td>技术中断</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>104</td><td>noMoney</td><td><code>nomoney</code></td><td>余额不足</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>105</td><td>reload</td><td><code>reload</code></td><td>重新加载</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>106</td><td>link</td><td><code>link</code></td><td>连接状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>107</td><td>pnow</td><td><code>pnow=1</code></td><td>当前支付</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>108</td><td>undefined</td><td><code>undefined</code></td><td>未定义</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>109</td><td>unlogged</td><td><code>unlogged</code></td><td>未登录</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 游戏核心数据 -->
+<tr><td>110</td><td>winAmountLong</td><td><code>win</code></td><td>中奖金额(完整)</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>111</td><td>mysteryScatterGame</td><td><code>mb</code></td><td>神秘Scatter游戏</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>112</td><td>mysteryScatterSymbol</td><td><code>ms</code></td><td>神秘Scatter符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>113</td><td>mysteryScatterSymbolGameHistory</td><td><code>msgh</code></td><td>神秘Scatter游戏历史</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>114</td><td>wildScatters</td><td><code>msc</code></td><td>Wild Scatter符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>115</td><td>slotHeight</td><td><code>sh</code></td><td>老虎机高度</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>116</td><td>configs</td><td><code>cfgs</code></td><td>配置信息</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>117</td><td>spinCycleWin</td><td><code>tw</code></td><td>旋转周期总赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>118</td><td>returnToPlayer</td><td><code>rtp</code></td><td>返奖率</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- Wild随机线倍数 -->
+<tr><td>119</td><td>WildRandomLineMultiplier.configuration</td><td><code>wrlm_sets</code></td><td>Wild随机线倍数配置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>120</td><td>WildRandomLineMultiplier.response</td><td><code>wrlm_res</code></td><td>Wild随机线倍数响应</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>121</td><td>WildRandomLineMultiplier.currentSet</td><td><code>wrlm_cs</code></td><td>Wild随机线倍数当前集</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 随机奖励系统 -->
+<tr><td>122</td><td>RandomAward.Configuration.normal</td><td><code>base_aw</code></td><td>基础随机奖励配置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>123</td><td>RandomAward.Configuration.freeSpins</td><td><code>fs_aw</code></td><td>免费游戏随机奖励</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>124</td><td>RandomAward.Configuration.reelConfigCount</td><td><code>aw_reel_count</code></td><td>随机奖励卷轴配置数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>125</td><td>RandomAward.Configuration.reelConfig</td><td><code>aw_reel</code></td><td>随机奖励卷轴配置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>126</td><td>RandomAward.Configuration.nextReelConfig</td><td><code>n_aw_reel</code></td><td>下个随机奖励卷轴配置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>127</td><td>RandomAward.Type.trigger</td><td><code>t</code></td><td>随机奖励触发类型</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>128</td><td>RandomAward.Type.multiplier</td><td><code>m</code></td><td>随机奖励倍数类型</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>129</td><td>RandomAward.Type.featureTrigger</td><td><code>tt</code></td><td>随机奖励功能触发</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>130</td><td>RandomAward.index</td><td><code>aw</code></td><td>随机奖励索引</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>131</td><td>RandomAward.awardPosition</td><td><code>aw_p</code></td><td>随机奖励位置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 累积奖功能 -->
+<tr><td>132</td><td>ProgressiveFeature.progressivePick</td><td><code>prg_i</code></td><td>累积奖选择</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>133</td><td>ProgressiveFeature.Status.stateValues</td><td><code>prg</code></td><td>累积奖状态值</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>134</td><td>ProgressiveFeature.Status.stateMasks</td><td><code>prg_m</code></td><td>累积奖状态掩码</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>135</td><td>ProgressiveFeature.Config.configValues</td><td><code>prg_cfg</code></td><td>累积奖配置值</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>136</td><td>ProgressiveFeature.Config.configMasks</td><td><code>prg_cfg_m</code></td><td>累积奖配置掩码</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 金钱符号系统 -->
+<tr><td>137</td><td>MoneySymbol.symbolID</td><td><code>mo_s</code></td><td>金钱符号ID</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>138</td><td>MoneySymbol.possibleValues</td><td><code>mo_v</code></td><td>金钱符号可能值</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>139</td><td>MoneySymbol.symbolsValues</td><td><code>mo</code></td><td>金钱符号值</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>140</td><td>MoneySymbol.symbolsTypes</td><td><code>mo_t</code></td><td>金钱符号类型</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>141</td><td>MoneySymbol.totalWin</td><td><code>mo_tw</code></td><td>金钱符号总赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>142</td><td>MoneySymbol.jackpotValues</td><td><code>mo_jp</code></td><td>金钱符号累积奖值</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>143</td><td>MoneySymbol.jackpotMasks</td><td><code>mo_jp_mask</code></td><td>金钱符号累积奖掩码</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>144</td><td>MoneySymbol.MOSymbolTypes.regular</td><td><code>r</code></td><td>普通金钱符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>145</td><td>MoneySymbol.MOSymbolTypes.instantValue</td><td><code>v</code></td><td>即时价值符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>146</td><td>MoneySymbol.MOSymbolTypes.multiplierValue</td><td><code>m</code></td><td>倍数价值符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>147</td><td>MoneySymbol.MOSymbolTypes.retriggerSymbol</td><td><code>rt</code></td><td>重新触发符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>148</td><td>MoneySymbol.MOSymbolTypes.jp1</td><td><code>jp1</code></td><td>累积奖1符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>149</td><td>MoneySymbol.MOSymbolTypes.jp2</td><td><code>jp2</code></td><td>累积奖2符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>150</td><td>MoneySymbol.MOSymbolTypes.jp3</td><td><code>jp3</code></td><td>累积奖3符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>151</td><td>MoneySymbol.MOSymbolTypes.jp4</td><td><code>jp4</code></td><td>累积奖4符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>152</td><td>MoneySymbol.MOSymbolTypes.jpb</td><td><code>jpb</code></td><td>累积奖奖金符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>153</td><td>MoneySymbol.MOSymbolTypes.mo1</td><td><code>mo1</code></td><td>金钱符号1</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>154</td><td>MoneySymbol.MOSymbolTypes.mo2</td><td><code>mo2</code></td><td>金钱符号2</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>155</td><td>MoneySymbol.MOSymbolTypes.extraCredit</td><td><code>ea</code></td><td>额外信用符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>156</td><td>MoneySymbol.MOSymbolTypes.collectMultiply</td><td><code>ma</code></td><td>收集倍增符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 奖金游戏 -->
+<tr><td>157</td><td>BonusGame.status</td><td><code>status</code></td><td>奖金游戏状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>158</td><td>BonusGame.wins</td><td><code>wins</code></td><td>奖金游戏赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>159</td><td>BonusGame.winsMask</td><td><code>wins_mask</code></td><td>奖金游戏赢得掩码</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>160</td><td>BonusGame.level</td><td><code>level</code></td><td>奖金游戏等级</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>161</td><td>BonusGame.life</td><td><code>lifes</code></td><td>奖金游戏生命</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>162</td><td>BonusGame.winPoints</td><td><code>wp</code></td><td>奖金游戏胜利点</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>163</td><td>BonusGame.realWin</td><td><code>rw</code></td><td>奖金游戏真实赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>164</td><td>BonusGame.coef</td><td><code>coef</code></td><td>奖金游戏系数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>165</td><td>BonusGame.bonusGameExists</td><td><code>bw</code></td><td>奖金游戏存在</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>166</td><td>BonusGame.bonusGameType</td><td><code>bt</code></td><td>奖金游戏类型</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>167</td><td>BonusGame.gameOver</td><td><code>end</code></td><td>奖金游戏结束</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>168</td><td>BonusGame.bonusGameChoice</td><td><code>ind</code></td><td>奖金游戏选择</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>169</td><td>BonusGame.iWins</td><td><code>i_wins</code></td><td>即时赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>170</td><td>BonusGame.markers</td><td><code>markers</code></td><td>奖金游戏标记</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>171</td><td>BonusGame.lWins</td><td><code>lWins</code></td><td>线赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>172</td><td>BonusGame.lInd</td><td><code>lInd</code></td><td>线索引</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>173</td><td>BonusGame.currentBonusRespin</td><td><code>rsb_c</code></td><td>当前奖金重转</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>174</td><td>BonusGame.maxBonusRespins</td><td><code>rsb_m</code></td><td>最大奖金重转</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>175</td><td>BonusGame.respinSymbols</td><td><code>rsb_s</code></td><td>重转符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>176</td><td>BonusGame.respinWinSymbols</td><td><code>rs_s</code></td><td>重转中奖符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>177</td><td>BonusGame.premultipliedWinData</td><td><code>rwm</code></td><td>预倍数赢得数据</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>178</td><td>BonusGame.extraRespinsWon</td><td><code>rsb_more</code></td><td>额外重转赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>179</td><td>BonusGame.extraRetriggersWon</td><td><code>rsb_rt</code></td><td>额外重触发赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>180</td><td>BonusGame.respinsTotalMultiplier</td><td><code>rsb_mu</code></td><td>重转总倍数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>181</td><td>BonusGame.BGItemValues</td><td><code>bg_i</code></td><td>奖金游戏物品值</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>182</td><td>BonusGame.BGItemMasks</td><td><code>bg_i_mask</code></td><td>奖金游戏物品掩码</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>183</td><td>BonusGame.Multipliers.status</td><td><code>mstatus</code></td><td>倍数状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>184</td><td>BonusGame.Multipliers.markers</td><td><code>mmarkers</code></td><td>倍数标记</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>185</td><td>BonusGame.Multipliers.wins</td><td><code>mwins</code></td><td>倍数赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 免费旋转奖金游戏 -->
+<tr><td>186</td><td>FreeSpinBonusGame.gameExsist</td><td><code>fsb_bw</code></td><td>免费旋转奖金游戏存在</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>187</td><td>FreeSpinBonusGame.status</td><td><code>fsb_status</code></td><td>免费旋转奖金游戏状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>188</td><td>FreeSpinBonusGame.wins</td><td><code>fsb_wins</code></td><td>免费旋转奖金游戏赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>189</td><td>FreeSpinBonusGame.multiplierMarkers</td><td><code>fsb_mm</code></td><td>免费旋转倍数标记</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>190</td><td>FreeSpinBonusGame.level</td><td><code>fsb_level</code></td><td>免费旋转奖金游戏等级</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>191</td><td>FreeSpinBonusGame.life</td><td><code>fsb_lives</code></td><td>免费旋转奖金游戏生命</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>192</td><td>FreeSpinBonusGame.gameOver</td><td><code>fsb_end</code></td><td>免费旋转奖金游戏结束</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>193</td><td>FreeSpinBonusGame.totalSpinsWins</td><td><code>fsb_s</code></td><td>免费旋转总旋转赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>194</td><td>FreeSpinBonusGame.totalMultiplilersWins</td><td><code>fsb_m</code></td><td>免费旋转总倍数赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 赌博系统 -->
+<tr><td>195</td><td>Gambling.gambling</td><td><code>gmb</code></td><td>赌博状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>196</td><td>Gambling.history</td><td><code>gmbhist</code></td><td>赌博历史</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>197</td><td>Gambling.result</td><td><code>gmbr</code></td><td>赌博结果</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>198</td><td>Gambling.state</td><td><code>gmbs</code></td><td>赌博状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>199</td><td>Gambling.win</td><td><code>gmbw</code></td><td>赌博赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>200</td><td>Gambling.skipGamble</td><td><code>gmbskip</code></td><td>跳过赌博</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>201</td><td>Gambling.currentGambleOccasion</td><td><code>gmbp</code></td><td>当前赌博场合</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>202</td><td>Gambling.option</td><td><code>opt</code></td><td>赌博选项</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 操作指令 -->
+<tr><td>203</td><td>Actions.action</td><td><code>action</code></td><td>动作指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>204</td><td>Actions.doInit</td><td><code>doInit</code></td><td>初始化指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>205</td><td>Actions.doSpin</td><td><code>doSpin</code></td><td>旋转指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>206</td><td>Actions.doCollect</td><td><code>doCollect</code></td><td>收集指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>207</td><td>Actions.doBonus</td><td><code>doBonus</code></td><td>奖金指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>208</td><td>Actions.doFSOption</td><td><code>doFSOption</code></td><td>免费旋转选项指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>209</td><td>Actions.doFSBonus</td><td><code>doFSBonus</code></td><td>免费旋转奖金指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>210</td><td>Actions.doMysteryScatter</td><td><code>doMysteryScatter</code></td><td>神秘Scatter指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>211</td><td>Actions.doCollectBonus</td><td><code>doCollectBonus</code></td><td>收集奖金指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>212</td><td>Actions.doGamble</td><td><code>doGamble</code></td><td>赌博指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>213</td><td>Actions.doGambleCollect</td><td><code>doGambleCollect</code></td><td>赌博收集指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>214</td><td>Actions.doJackpotCollect</td><td><code>doJackpotCollect</code></td><td>累积奖收集指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>215</td><td>Actions.doPlayJackpot</td><td><code>doPlayJackpot</code></td><td>累积奖游戏指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>216</td><td>Actions.doPlaceBet</td><td><code>doBet</code></td><td>下注指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>217</td><td>Actions.doPlay</td><td><code>doPlay</code></td><td>游戏指令</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 下步操作 -->
+<tr><td>218</td><td>NextActions.nextAction</td><td><code>na</code></td><td>下一个动作</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>219</td><td>NextActions.Spin</td><td><code>s</code></td><td>旋转</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>220</td><td>NextActions.Collect</td><td><code>nc</code></td><td></td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>221</td><td>NextActions.Gamble</td><td><code>g</code></td><td>赌博</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>222</td><td>NextActions.Bonus</td><td><code>b</code></td><td>奖金</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>223</td><td>NextActions.CollectBonus</td><td><code>cb</code></td><td>收集奖金</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>224</td><td>NextActions.FSOption</td><td><code>fso</code></td><td>免费旋转选项</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>225</td><td>NextActions.MysteryScatter</td><td><code>m</code></td><td>神秘Scatter</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>226</td><td>NextActions.FSBonus</td><td><code>fsb</code></td><td>免费旋转奖金</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>227</td><td>NextActions.GambleCollect</td><td><code>gc</code></td><td>赌博收集</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>228</td><td>NextActions.JackpotCollect</td><td><code>cj</code></td><td>累积奖收集</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>229</td><td>NextActions.PlayJackpot</td><td><code>pj</code></td><td>累积奖游戏</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>230</td><td>NextActions.PlaceBet</td><td><code>bt</code></td><td>下注</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>231</td><td>NextActions.Play</td><td><code>p</code></td><td>游戏</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 累积奖系统 -->
+<tr><td>232</td><td>Jakpot.jackpotActive</td><td><code>jp</code></td><td>累积奖激活</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>233</td><td>Jakpot.jackpotWinID</td><td><code>jwid</code></td><td>累积奖中奖ID</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>234</td><td>Jakpot.jackpotWinOrder</td><td><code>jwo</code></td><td>累积奖中奖顺序</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>235</td><td>Jakpot.jackpotWinAmount</td><td><code>jw</code></td><td>累积奖中奖金额</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>236</td><td>Jakpot.jackpotType</td><td><code>jpt</code></td><td>累积奖类型</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>237</td><td>Jakpot.jackpotStatus</td><td><code>jptss</code></td><td>累积奖状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>238</td><td>Jakpot.jackpotShutdown</td><td><code>jpshd</code></td><td>累积奖关闭</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>239</td><td>Jakpot.jackpotMiniGameEnabled</td><td><code>jpmg</code></td><td>累积奖小游戏启用</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>240</td><td>Jakpot.jackpotNotWon</td><td><code>jpnw</code></td><td>累积奖未中奖</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>241</td><td>Jakpot.jackpotWonInstances</td><td><code>jptsi</code></td><td>累积奖中奖实例</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>242</td><td>Jakpot.Type.random</td><td><code>r</code></td><td>随机累积奖类型</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>243</td><td>Jakpot.Type.twoSteps</td><td><code>ts</code></td><td>两步累积奖类型</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>244</td><td>Jakpot.Status.obtained</td><td><code>o</code></td><td>累积奖获得状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>245</td><td>Jakpot.Status.used</td><td><code>u</code></td><td>累积奖使用状态</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>246</td><td>Jakpot.WonInstance.type</td><td><code>jpit</code></td><td>累积奖中奖实例类型</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>247</td><td>Jakpot.WonInstance.jackpotId</td><td><code>jpid</code></td><td>累积奖中奖实例ID</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>248</td><td>Jakpot.WonInstance.jackpotInstance</td><td><code>jpiid</code></td><td>累积奖中奖实例编号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>249</td><td>Jakpot.WonInstance.amount</td><td><code>jpw</code></td><td>累积奖中奖实例金额</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>250</td><td>Jakpot.WonInstance.multiplier</td><td><code>jpm</code></td><td>累积奖中奖实例倍数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>251</td><td>Jakpot.WonInstance.autoDrawing</td><td><code>jpad</code></td><td>累积奖自动开奖</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>252</td><td>Jakpot.WonInstance.Type.progressive</td><td><code>p</code></td><td>累积型累积奖</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>253</td><td>Jakpot.WonInstance.Type.nonProgressive</td><td><code>np</code></td><td>非累积型累积奖</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 免费轮系统 -->
+<tr><td>254</td><td>FreeRound.Events</td><td><code>ev</code></td><td>免费轮事件</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>255</td><td>FreeRound.RoundsLeft</td><td><code>frn</code></td><td>剩余免费轮</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>256</td><td>FreeRound.TotalWin</td><td><code>fra</code></td><td>免费轮总赢得</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>257</td><td>FreeRound.RoundType</td><td><code>frt</code></td><td>免费轮类型</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>258</td><td>FreeRound.TurboSpinMode</td><td><code>tsm</code></td><td>涡轮旋转模式</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>259</td><td>FreeRound.BonusCode</td><td><code>frbc</code></td><td>免费轮奖金代码</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>260</td><td>FreeRound.BonusCodeParam</td><td><code>bonus_code</code></td><td>奖金代码参数</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>261</td><td>FreeRound.Event.Start</td><td><code>FR0</code></td><td>免费轮开始事件</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>262</td><td>FreeRound.Event.Finish</td><td><code>FR1</code></td><td>免费轮结束事件</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>263</td><td>FreeRound.Event.Error</td><td><code>FR2</code></td><td>免费轮错误事件</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 累积奖可视化 -->
+<tr><td>264</td><td>JackpotVisualization.JPVMask</td><td><code>jpv_m</code></td><td>累积奖可视化掩码</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>265</td><td>JackpotVisualization.JPVValues</td><td><code>jpv_v</code></td><td>累积奖可视化值</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>266</td><td>JackpotVisualization.JPVType</td><td><code>t</code></td><td>累积奖可视化类型</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>267</td><td>JackpotVisualization.JPVPositions</td><td><code>p</code></td><td>累积奖可视化位置</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>268</td><td>JackpotVisualization.JPVReels</td><td><code>r</code></td><td>累积奖可视化卷轴</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>269</td><td>JackpotVisualization.Type.badges</td><td><code>b</code></td><td>徽章类型可视化</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 黄金符号 -->
+<tr><td>270</td><td>GoldSymbol.goldSymbolReels</td><td><code>gsf_r</code></td><td>黄金符号卷轴</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>271</td><td>GoldSymbol.goldSymbols</td><td><code>gsf</code></td><td>黄金符号</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+<tr><td>272</td><td>GoldSymbol.goldSymbolAwards</td><td><code>gsf_a</code></td><td>黄金符号奖励</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+<!-- 经典赔付表 -->
+<tr><td>273</td><td>ClassicPaytable.combinations</td><td><code>com</code></td><td>经典组合</td><td class="param-value-a"></td><td class="param-value-b"></td></tr>
+
+</tbody></table>
+<script>
+// 全局变量
+let paramsA = new Map();
+let paramsB = new Map();
+
+// 初始化表格
+function initializeTable() {
+    // 默认应用隐藏过滤
+    applyHideEmptyFilter();
+}
+
+// 搜索功能
+const inp = document.getElementById('kw');
+const tb = document.querySelector('#ft tbody');
+inp.addEventListener('input', () => {
+    const v = inp.value.trim().toLowerCase();
+    tb.querySelectorAll('tr').forEach(tr => {
+        if (tr.classList.contains('category')) return;
+        const txt = tr.textContent.toLowerCase();
+        tr.classList.toggle('hide', v && !txt.includes(v));
+    });
+});
+
+// 获取DOM元素
+const paramInput1 = document.getElementById('paramInput1');
+const paramInput2 = document.getElementById('paramInput2');
+const clearBtn = document.getElementById('clearBtn');
+const parseResult = document.getElementById('parseResult');
+
+// 解析参数字符串
+function parseParameterString(input) {
+    const params = new Map();
+    
+    if (!input.trim()) return params;
+    
+    // 支持多种分隔符
+    const pairs = input.split(/[&,;|\s]+/).filter(pair => pair.includes('='));
+    
+    pairs.forEach(pair => {
+        const [key, value] = pair.split('=');
+        if (key && value !== undefined) {
+            params.set(key.trim(), value.trim());
+        }
+    });
+    
+    return params;
+}
+
+// 自动解析并更新表格显示
+function autoParseAndUpdate() {
+    paramsA = parseParameterString(paramInput1.value);
+    paramsB = parseParameterString(paramInput2.value);
+    updateTableDisplay();
+}
+
+// 更新表格显示
+function updateTableDisplay() {
+    const tbody = document.querySelector('#ft tbody');
+    const rows = tbody.querySelectorAll('tr:not(.category)');
+    
+    let matchCountA = 0;
+    let matchCountB = 0;
+    let bothCount = 0;
+    let diffCount = 0;
+    
+    rows.forEach(row => {
+        const keyCell = row.querySelector('code');
+        if (!keyCell) return;
+        
+        const key = keyCell.textContent.trim();
+        const paramCellA = row.querySelector('.param-value-a');
+        const paramCellB = row.querySelector('.param-value-b');
+        
+        // 清空之前的状态
+        paramCellA.textContent = '';
+        paramCellB.textContent = '';
+        paramCellB.classList.remove('diff');
+        row.classList.remove('has-data-a', 'has-data-b', 'has-data-both', 'has-diff', 'no-data');
+        
+        const hasA = paramsA.has(key);
+        const hasB = paramsB.has(key);
+        
+        if (hasA) {
+            paramCellA.textContent = paramsA.get(key);
+            matchCountA++;
+        }
+        
+        if (hasB) {
+            paramCellB.textContent = paramsB.get(key);
+            matchCountB++;
+        }
+        
+        // 设置行状态和差异高亮
+        if (hasA && hasB) {
+            const valueA = paramsA.get(key);
+            const valueB = paramsB.get(key);
+            
+            if (valueA === valueB) {
+                // 值相同
+                row.classList.add('has-data-both');
+                bothCount++;
+            } else {
+                // 值不同，B列红色高亮
+                paramCellB.classList.add('diff');
+                row.classList.add('has-diff');
+                diffCount++;
+            }
+        } else if (hasA) {
+            row.classList.add('has-data-a');
+        } else if (hasB) {
+            row.classList.add('has-data-b');
+        } else {
+            row.classList.add('no-data');
+        }
+    });
+    
+    // 更新结果显示
+    let resultText = '';
+    if (paramsA.size > 0 || paramsB.size > 0) {
+        resultText = `实时解析: A组${paramsA.size}个参数(匹配${matchCountA}个字段), B组${paramsB.size}个参数(匹配${matchCountB}个字段) | 相同值${bothCount}个, 不同值${diffCount}个`;
+        parseResult.style.color = '#374151';
+    }
+    parseResult.textContent = resultText;
+    
+    // 应用隐藏过滤
+    applyHideEmptyFilter();
+}
+
+// 应用隐藏空数据过滤
+function applyHideEmptyFilter() {
+    const input1 = document.getElementById('paramInput1').value.trim();
+    const input2 = document.getElementById('paramInput2').value.trim();
+    const shouldHide = input1 || input2; // 任何一个输入框有内容时就隐藏无数据字段
+    
+    const tbody = document.querySelector('#ft tbody');
+    const rows = tbody.querySelectorAll('tr:not(.category)');
+    
+    rows.forEach(row => {
+        if (shouldHide && row.classList.contains('no-data')) {
+            row.style.display = 'none';
+        } else {
+            row.style.display = '';
+        }
+    });
+}
+
+// 事件监听器 - 自动解析
+paramInput1.addEventListener('input', autoParseAndUpdate);
+paramInput2.addEventListener('input', autoParseAndUpdate);
+
+clearBtn.addEventListener('click', () => {
+    paramInput1.value = '';
+    paramInput2.value = '';
+    paramsA.clear();
+    paramsB.clear();
+    parseResult.textContent = '';
+    
+    const tbody = document.querySelector('#ft tbody');
+    const rows = tbody.querySelectorAll('tr:not(.category)');
+    
+    rows.forEach(row => {
+        const paramCellA = row.querySelector('.param-value-a');
+        const paramCellB = row.querySelector('.param-value-b');
+        
+        if (paramCellA) paramCellA.textContent = '';
+        if (paramCellB) {
+            paramCellB.textContent = '';
+            paramCellB.classList.remove('diff');
+        }
+        row.classList.remove('has-data-a', 'has-data-b', 'has-data-both', 'has-diff', 'no-data');
+        row.style.display = '';
+    });
+    
+    // 重新应用隐藏过滤
+    setTimeout(applyHideEmptyFilter, 10);
+});
+
+// 页面加载完成后初始化表格
+window.addEventListener('load', () => {
+    initializeTable();
+    // 初始化默认隐藏空字段
+    applyHideEmptyFilter();
+});
+</script>
+<p style="margin-top:24px;font-size:12px;color:#666;">包含273个字段的完整对照表，涵盖基础投注、免费游戏、卷轴系统、乘数功能、特殊机制、奖金游戏、累积奖系统、黄金符号等slot游戏全部核心要素</p>
+</body></html>

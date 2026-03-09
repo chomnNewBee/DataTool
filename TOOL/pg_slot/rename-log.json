@@ -1,0 +1,271 @@
+{
+  "timestamp": "2025-09-25T11:13:51.496Z",
+  "summary": {
+    "totalDirs": 52,
+    "successCount": 51,
+    "failedCount": 1
+  },
+  "details": [
+    {
+      "from": "1001",
+      "to": "vs20gengembnz",
+      "success": true
+    },
+    {
+      "from": "1002",
+      "to": "vs20sugarrush",
+      "success": true
+    },
+    {
+      "from": "1003",
+      "to": "vs20fruitswx",
+      "success": true
+    },
+    {
+      "from": "1004",
+      "to": "vs576treasures",
+      "success": true
+    },
+    {
+      "from": "1005",
+      "to": "vs20starlight",
+      "success": true
+    },
+    {
+      "from": "1006",
+      "to": "vs20gatotx",
+      "success": true
+    },
+    {
+      "from": "1007",
+      "to": "vs20fruitsw",
+      "success": true
+    },
+    {
+      "from": "1008",
+      "to": "vs20olympgate",
+      "success": true
+    },
+    {
+      "from": "1009",
+      "to": "vs20olympx",
+      "success": true
+    },
+    {
+      "from": "1010",
+      "to": "vswayschilhtwo",
+      "success": true
+    },
+    {
+      "from": "1011",
+      "to": "vs20sugarrushx",
+      "success": true
+    },
+    {
+      "from": "1012",
+      "to": "vs20gatotgates",
+      "success": true
+    },
+    {
+      "from": "1013",
+      "to": "vs20starlightx",
+      "success": true
+    },
+    {
+      "from": "1014",
+      "to": "vswaysstampede",
+      "success": true
+    },
+    {
+      "from": "1015",
+      "to": "vs20bhunter",
+      "success": true
+    },
+    {
+      "from": "1016",
+      "to": "vswaysargonts",
+      "success": true
+    },
+    {
+      "from": "1017",
+      "to": "vs20lbstrhouse",
+      "success": true
+    },
+    {
+      "from": "1018",
+      "to": "vs10spellmastr",
+      "success": true
+    },
+    {
+      "from": "1019",
+      "to": "vswaysfirest2",
+      "success": true
+    },
+    {
+      "from": "1020",
+      "to": "vswaysaztec",
+      "success": true
+    },
+    {
+      "from": "1021",
+      "to": "vswayspompmr2",
+      "success": true
+    },
+    {
+      "from": "1022",
+      "to": "vs40wildrun",
+      "success": true
+    },
+    {
+      "from": "1023",
+      "to": "vswaysmodfr",
+      "success": true
+    },
+    {
+      "from": "1024",
+      "to": "vs20irishcrown",
+      "success": true
+    },
+    {
+      "from": "1025",
+      "to": "vswaysspltsym",
+      "success": true
+    },
+    {
+      "from": "1026",
+      "to": "vs20sbpnudge",
+      "success": true
+    },
+    {
+      "from": "1027",
+      "to": "N/A",
+      "success": false,
+      "error": "未找到API映射"
+    },
+    {
+      "from": "1028",
+      "to": "vs10jpblaze",
+      "success": true
+    },
+    {
+      "from": "1029",
+      "to": "vs5spjokfp",
+      "success": true
+    },
+    {
+      "from": "1030",
+      "to": "vs20popbottles",
+      "success": true
+    },
+    {
+      "from": "1031",
+      "to": "vs5tdragresk",
+      "success": true
+    },
+    {
+      "from": "1032",
+      "to": "vs1mjokfp",
+      "success": true
+    },
+    {
+      "from": "1033",
+      "to": "vs10beekeep",
+      "success": true
+    },
+    {
+      "from": "1034",
+      "to": "vswaysmjwl",
+      "success": true
+    },
+    {
+      "from": "1035",
+      "to": "vswaysaztecgm",
+      "success": true
+    },
+    {
+      "from": "1036",
+      "to": "vswaysstrlght",
+      "success": true
+    },
+    {
+      "from": "1037",
+      "to": "vs20amuleteg",
+      "success": true
+    },
+    {
+      "from": "1038",
+      "to": "vs10fortnpig",
+      "success": true
+    },
+    {
+      "from": "1039",
+      "to": "vs10fireice",
+      "success": true
+    },
+    {
+      "from": "1040",
+      "to": "vs20nilefort",
+      "success": true
+    },
+    {
+      "from": "1041",
+      "to": "vs40infwild",
+      "success": true
+    },
+    {
+      "from": "1042",
+      "to": "vs20alieninv",
+      "success": true
+    },
+    {
+      "from": "1043",
+      "to": "vs25goldpartya",
+      "success": true
+    },
+    {
+      "from": "1044",
+      "to": "vs25sleepdrag",
+      "success": true
+    },
+    {
+      "from": "1045",
+      "to": "vs25goldrexp",
+      "success": true
+    },
+    {
+      "from": "1046",
+      "to": "vs10diamondrgh",
+      "success": true
+    },
+    {
+      "from": "1047",
+      "to": "vs20gtsofhades",
+      "success": true
+    },
+    {
+      "from": "1048",
+      "to": "vswayswildbrst",
+      "success": true
+    },
+    {
+      "from": "1049",
+      "to": "vs20plsmcannon",
+      "success": true
+    },
+    {
+      "from": "1050",
+      "to": "vswaysmltchmgw",
+      "success": true
+    },
+    {
+      "from": "1051",
+      "to": "vswaysolwfp",
+      "success": true
+    },
+    {
+      "from": "1052",
+      "to": "vs5luckyphnly",
+      "success": true
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+大多数游戏都有的字段:
+aw        累计赢分(包括免费累计赢分)
+ctw       单条数据赢分
+ssaw     累计赢分
+tw
+np
+cs
+fs.aw
+
+
+
+太阳神传说[Rise of Apollo] 8864700:
+aw
+ctw
+fs.aw
+lw{"9": 0.12}
+ssaw
+tw
+twbm
+
+维京纪元[Asgardian Rising]8863900:
+aw
+ctw
+fs.aw
+lw:{"11": 0.12}
+lwa
+ssaw
+tw
+
+恐龙帝国[Jurassic Kingdom]8863200:
+aw
+ctw
+lw:{"9": 0.48}
+lwa
+ssaw
+tw
+
+黄金摇钱树[Prosperity Fortune Tree]:
+aw
+ctw
+fs.aw
+lw:{"13": 0.32}
+ssaw
+tw
+
+美食夏日祭:
+aw
+ctw
+lw{9: 0.24}
+ssaw
+tw
+twbm
+
+狂暴少女:
+aw
+ctw
+tw
+sw:{5: 0.5}
+twbm
+
+街头涂鸦:
+aw
+ctw
+lw: {4: 4.8}
+lwam: {4: 4.8}
+ssaw
+tw
+
+
+
+
+

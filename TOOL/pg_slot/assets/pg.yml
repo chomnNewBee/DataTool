@@ -1,0 +1,121 @@
+games:
+  - symbol: UltimateStriker
+    gameDirId: '1489936'
+    id: '8865910'
+    name: UltimateStriker
+    name_en: UltimateStriker
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: HeistStakes
+    gameDirId: '105'
+    id: '8865910'
+    name: HeistStakes
+    name_en: HeistStakes
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: MajesticTreasures
+    gameDirId: '95'
+    id: '8865910'
+    name: MajesticTreasures
+    name_en: MajesticTreasures
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: AlchemyGold
+    gameDirId: '1368367'
+    id: '8865910'
+    name: AlchemyGold
+    name_en: AlchemyGold
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: SpiritedWonders
+    gameDirId: '119'
+    id: '8865910'
+    name: SpiritedWonders
+    name_en: SpiritedWonders
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: NinjaRaccoonFrenzy
+    gameDirId: '1529867'
+    id: '8865910'
+    name: NinjaRaccoonFrenzy
+    name_en: NinjaRaccoonFrenzy
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: MaskCarnival
+    gameDirId: '118'
+    id: '8865910'
+    name: NinjaRaccoonFrenzy
+    name_en: NinjaRaccoonFrenzy
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: FruityCandy
+    gameDirId: '1397455'
+    id: '8865910'
+    name: NinjaRaccoonFrenzy
+    name_en: NinjaRaccoonFrenzy
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: Medusa
+    gameDirId: '7'
+    id: '8865910'
+    name: Medusa
+    name_en: Medusa
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: ProsperityLion
+    gameDirId: '36'
+    id: '8865910'
+    name: ProsperityLion
+    name_en: ProsperityLion
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null

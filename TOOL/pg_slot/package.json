@@ -1,0 +1,39 @@
+{
+  "name": "pp-slot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "mx:icons": "ts-node scripts/mx-icon-collector.ts",
+    "export:excel": "ts-node export-pp-to-xlsx.ts",
+    "update:buyFree": "ts-node update-existBuyFree-from-doInit.ts",
+    "inject:html": "ts-node add-inject-script.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/async-lock": "^1.4.2",
+    "@types/decimal.js": "^7.4.3",
+    "@types/node": "^24.4.0",
+    "@types/sharp": "^0.32.0",
+    "@types/xlsx": "^0.0.35",
+    "@webassemblyjs/wasm-parser": "^1.14.1",
+    "async-lock": "^1.4.1",
+    "axios": "^1.12.2",
+    "decimal.js": "^10.6.0",
+    "js-yaml": "^4.1.0",
+    "node-fetch": "^2.7.0",
+    "p-limit": "^6.2.0",
+    "playwright": "^1.55.0",
+    "sharp": "^0.34.4",
+    "typescript": "^5.9.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node-fetch": "^2.6.4",
+    "ts-node": "^10.9.2"
+  }
+}
