@@ -1,0 +1,41 @@
+﻿{
+  "project_path_list": [
+    "D:/work/KingBoxPGSEx0",
+    "D:/work/KingBoxPGS3",
+    "D:/work/KingBoxPGSS2026NoCode"
+  ],
+  "click_path_index": 2,
+  "click_server_index": 1,
+  "tada": false,
+  "pp": false,
+  "history_path": "D:/work/KingBoxpgsVerfiy/verify",
+  "package_name_table": {
+    "HipHopPanda": "HHPanda"
+  },
+  "server_info": [
+    {
+      "name": "内网测试服",
+      "ip": "192.168.1.100",
+      "username": "x99",
+      "key_path": "",
+      "key_psd": "kinggame",
+      "www_path": "/home/x99/home/www/",
+      "icon_path": "/home/x99/home/www/fordlc/icon/",
+      "refresh_cdn": false,
+      "cdn_zone_id": "",
+      "cdn_token": ""
+    },
+    {
+      "name": "外网测试服",
+      "ip": "47.89.179.172",
+      "username": "root",
+      "key_path": "./kg-stress-secret.pem",
+      "key_psd": "",
+      "www_path": "/data/Tool/www/",
+      "icon_path": "/data/Tool/www/fordlc/icon/",
+      "refresh_cdn": true,
+      "cdn_zone_id": "191700bd8ead143b405df7fa05eb5fcb",
+      "cdn_token": "aGYQi-vault_2up_H9BQ6S0QzV4kSEhblamqIgb2"
+    }
+  ]
+}

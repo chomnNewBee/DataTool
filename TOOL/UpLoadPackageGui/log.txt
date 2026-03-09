@@ -1,0 +1,30 @@
+
+开始上传到->外网测试服
+开始更新-->:JewelsOfProsperity
+开始压缩
+添加压缩文件-->:88
+添加压缩文件-->:favicon
+添加压缩文件-->:shared
+
+压缩完成
+开始上传文件:D:/work/KingBoxPGSS2026NoCode/JewelsOfProsperity/JewelsOfProsperity.zip
+远程文件地址:/data/Tool/www/JewelsOfProsperity/JewelsOfProsperity.zip
+文件上传到linux成功
+执行命令:cd /data/Tool/www//JewelsOfProsperity;unzip -o ./JewelsOfProsperity.zip
+更新完成-->:JewelsOfProsperity
+正在刷新缓存
+{  "result": {    "id": "191700bd8ead143b405df7fa05eb5fcb"  },  "success": true,  "errors": [],  "messages": []}
+刷新缓存完成!
+任务执行完毕!,用时13秒!
+删除本地文件:verify\update_meta.json.last
+同步 update_meta.json 完成
+开始上传历史记录文件
+开始上传文件:D:/work/KingBoxpgsVerfiy/verify/verfiy_pgsoft.com__v2/verfiy-pgsoft.com/static/js/vendor.1216616338eeac66c2fc.js
+远程文件地址:/data/Tool/www/verify/verfiy_pgsoft.com__v2/verfiy-pgsoft.com/static/js/vendor.1216616338eeac66c2fc.js
+文件上传到linux成功
+历史记录文件上传完成
+任务执行完毕!,用时5秒!
+删除本地文件:verify\update_meta.json.last
+同步 update_meta.json 完成
+删除本地文件:verify\update_meta.json.last
+同步 update_meta.json 完成
