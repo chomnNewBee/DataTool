@@ -1,0 +1,61 @@
+games:
+  - symbol: GalaxyMiner
+    gameDirId: '1918451'
+    id: '8865910'
+    name: GalaxyMiner
+    name_en: Galaxy Miner
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: false
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: ThreeCrazyPiggies
+    gameDirId: '1727711'
+    id: '8865910'
+    name: ThreeCrazyPiggies
+    name_en: Three Crazy Piggies
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: false
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: TsarTreasures
+    gameDirId: '1655268'
+    id: '8865910'
+    name: TsarTreasures
+    name_en: Tsar Treasures
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: WildFireworks
+    gameDirId: '83'
+    id: '8865910'
+    name: WildFireworks
+    name_en: Wild Fireworks
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: ForgeOfWealth
+    gameDirId: '1555350'
+    id: '88611500'
+    name: ForgeOfWealth
+    name_en: Forge of Wealth
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null

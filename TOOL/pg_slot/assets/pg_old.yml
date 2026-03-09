@@ -1,0 +1,490 @@
+games:
+  - symbol: TotemWonders
+    gameDirId: '1338274'
+    id: '8865910'
+    name: TotemWonders
+    name_en: Totem Wonders
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: OrientalProsperity
+    gameDirId: '112'
+    id: '111111111111'
+    name: OrientalProsperity
+    name_en: Oriental Prosperity
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: ButterflyBlossom
+    gameDirId: '125'
+    id: '8865220'
+    name: Butterfly Blossom
+    name_en: Butterfly Blossom
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: CircusDelight
+    gameDirId: '80'
+    id: '8865125'
+    name: Circus Delight
+    name_en: Circus Delight
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: false
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: MuayThaiChampion
+    gameDirId: '64'
+    id: '8865600'
+    name: Muay Thai Champion
+    name_en: Muay Thai Champion
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: SharkBounty
+    gameDirId: '1648578'
+    id: '8865600'
+    name: Shark Bounty
+    name_en: Shark Bounty
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: BuffaloWin
+    gameDirId: '108'
+    id: '8865600'
+    name: Buffalo Win
+    name_en: Buffalo Win
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: NinjaVsSamurai
+    gameDirId: '59'
+    id: '8865600'
+    name: Ninja vs Samurai
+    name_en: Ninja vs Samurai
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: WerewolfsHunt
+    gameDirId: '1615454'
+    id: '8865600'
+    name: Werewolf's Hunt
+    name_en: RWerewolf's Hunt
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: MafiaMayhem
+    gameDirId: '1580541'
+    id: '8865600'
+    name: Mafia Mayhem
+    name_en: Mafia Mayhem
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: LegendaryMonkeyKing
+    gameDirId: '107'
+    id: '8865600'
+    name: Legendary Monkey King
+    name_en: Legendary Monkey King
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: RiseOfApollo
+    gameDirId: '101'
+    id: '8865600'
+    name: Rise Of Apollo
+    name_en: Rise Of Apollo
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: GraffitiRush
+    gameDirId: '1804577'
+    id: '8865600'
+    name: Graffiti Rush
+    name_en: Graffiti Rush
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: DoomsdayRampage
+    gameDirId: '1827457'
+    id: '8865600'
+    name: Doomsday Rampage
+    name_en: Doomsday Rampage
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: TheGreatIcescape
+    gameDirId: '53'
+    id: '8865600'
+    name: TheGreatIcescape
+    name_en: TheGreatIcescape
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: AsgardianRising
+    gameDirId: '1340277'
+    id: '8865600'
+    name: Asgardian Rising
+    name_en: Asgardian Rising
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: JurassicKingdom
+    gameDirId: '110'
+    id: '8865600'
+    name: Jurassic Kingdom
+    name_en: Jurassic Kingdom
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: ProsperityFortuneTree
+    gameDirId: '1312883'
+    id: '8865600'
+    name: Prosperity Fortune Tree
+    name_en: Prosperity Fortune Tree
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: OishiDelights
+    gameDirId: '1815268'
+    id: '8865600'
+    name: Oishi Delights
+    name_en: Oishi Delights
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: MuseumMystery
+    gameDirId: '1755623'
+    id: '8865600'
+    name: Museum Mystery
+    name_en: Museum Mystery
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: FortuneTiger
+    gameDirId: '126'
+    id: '8865600'
+    name: Fortune Tiger
+    name_en: Fortune Tiger
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: FortuneOx
+    gameDirId: '98'
+    id: '8865600'
+    name: Fortune Ox
+    name_en: Fortune Ox
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: EmperorsFavour
+    gameDirId: '44'
+    id: '8865600'
+    name: Emperors Favour
+    name_en: Emperors Favour
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: BikiniParadise
+    gameDirId: '69'
+    id: '8865600'
+    name: Bikini Paradise
+    name_en: Bikini Paradise
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: JewelsOfProsperity
+    gameDirId: '88'
+    id: '8865600'
+    name: Jewels Of Prosperity
+    name_en: Jewels Of Prosperity
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: GemSaviourSword
+    gameDirId: '38'
+    id: '8865600'
+    name: Gem Saviour Sword
+    name_en: Gem Saviour Sword
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: IncanWonders
+    gameDirId: '1850016'
+    id: '8865600'
+    name: Incan Wonders
+    name_en: Incan Wonders
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: ChocolateDeluxe
+    gameDirId: '1666445'
+    id: '8865600'
+    name: Chocolate Deluxe
+    name_en: Chocolate Deluxe
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: EgyptBookOfMystery
+    gameDirId: '73'
+    id: '8865600'
+    name: Egypt's Book of Mystery
+    name_en: Egypt's Book of Mystery
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: HoneyTrapofDiaoChan
+    gameDirId: '1'
+    id: '8865600'
+    name: Honey Trap of Diao Chan
+    name_en: Honey Trap of Diao Chan
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: GuardiansofIceFire
+    gameDirId: '91'
+    id: '8865600'
+    name: Guardians of Ice & Fire
+    name_en: Guardians of Ice & Fire
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: SuperGolfDrive
+    gameDirId: '1513328'
+    name: SuperGolfDrive
+    name_en: SuperGolfDrive
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: SafariWilds
+    gameDirId: '1594259'
+    name: Safari Wilds
+    name_en: Safari Wilds
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: WildCoaster
+    gameDirId: '132'
+    name: Wild Coaster
+    name_en: Wild Coaster
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+  - symbol: DestinyofSunMoon
+    gameDirId: '121'
+    name: Destiny of Sun & Moon
+    name_en: Destiny of Sun & Moon
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+
+  - symbol: DestinyofSunMoon
+    gameDirId: '121'
+    name: Destiny of Sun & Moon
+    name_en: Destiny of Sun & Moon
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+
+  - symbol: SongkranSplash
+    gameDirId: '1448762'
+    name: SongkranSplash
+    name_en: SongkranSplash
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+
+  - symbol: JackTheGiantHunter
+    gameDirId: '1834850'
+    name: Jack The Giant Hunter
+    name_en: Jack The Giant Hunter
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+
+  - symbol: CruiseRoyale
+    gameDirId: '1473388'
+    name: Cruise Royale
+    name_en: Cruise Royale
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+    
+  - symbol: CandyBonanza
+    gameDirId: '100'
+    name: Candy Bonanza
+    name_en: Candy Bonanza
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+
+  - symbol: MysticPotion
+    gameDirId: '1717688'
+    name: Mystic Potion
+    name_en: Mystic Potion
+    existBuyFree: 0
+    rtp: '96.71'
+    completed: true
+    break: true
+    anteRatio: null
+    defaultPurchaseRatio: null
+    superPurchaseRatio: null
+ 

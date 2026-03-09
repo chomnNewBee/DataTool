@@ -735,6 +735,7 @@ export class GameCollector {
         switch (this.gameDirId) {
             case "38":
             case "44":
+            case "25":
                 if (!obj.dt.si.bns) return false
                 let bns = obj.dt.si.bns
                 if (bns/*&&fs.ts > 0*/) {
@@ -1251,12 +1252,19 @@ export class GameCollector {
                     continue
                 }
 
+                if ( mul > 270 ||(!this.free && mul >100)|| (bucket == "over_30")&&this.payoutObj[bucket].length >50)  {
+                    this.resetRound(tables)
+                    continue
+                }
+
                  if (GameCollector.data_records.get(tables[tables.length - 1].dt.si.hashr)) {
                     console.log("检测到重复数据 跳过")
                     this.resetRound(tables)
                     continue
                 }
                 GameCollector.data_records.set(tables[tables.length - 1].dt.si.hashr, tables)
+
+
                 
                 const content = JSON.stringify(tables.map((o) => JSON.stringify(o)));
                 const fileName = this.makeDeterministicName(content);
@@ -1360,18 +1368,22 @@ export class GameCollector {
     checkFreeInFree(tables: any) {
         let firstTs = 0
         for (let table of tables) {
-            if(!table.dt.si.fs){
+            let fs = table.dt.si.fs
+            if(!fs){
+                fs = table.dt.si.bns
+            }
+            if(!fs){
                 continue
             }
-            if (table.dt.si.fs.ts <= 0) {
+            if (fs.ts <= 0) {
                 continue
             }
             if (firstTs == 0) {
-                firstTs = table.dt.si.fs.ts
+                firstTs = fs.ts
             }
 
-            if (firstTs < table.dt.si.fs.ts) {
-                let num = table.dt.si.fs.ts - firstTs
+            if (firstTs < fs.ts) {
+                let num = fs.ts - firstTs
                 console.log(`检测到免中免,增加${num}次免费`)
                 if(num<=4){
                     return false
@@ -1439,7 +1451,7 @@ if (require.main === module) {
     const processorsPerGame =
         processorsArgIndex >= 0
             ? parseInt(args[processorsArgIndex].split("=")[1] || "1", 10)
-            :5;
+            :10;
     const directSymbols = args.filter(
         (a) => !a.startsWith("--concurrency=") && !a.startsWith("--processors="),
     );

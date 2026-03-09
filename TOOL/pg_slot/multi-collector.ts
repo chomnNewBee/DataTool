@@ -749,6 +749,7 @@ export class GameCollector {
         switch (this.gameDirId) {
             case "38":
             case "44":
+            case "25":
                 if (!obj.dt.si.bns) return false
                 let bns = obj.dt.si.bns
                 if (bns/*&&fs.ts > 0*/) {
@@ -763,6 +764,7 @@ export class GameCollector {
                 }
                 break
         }
+
 
         return false
     }
@@ -1372,18 +1374,22 @@ export class GameCollector {
     checkFreeInFree(tables: any) {
         let firstTs = 0
         for (let table of tables) {
-            if(!table.dt.si.fs){
+            let fs = table.dt.si.fs
+            if(!fs){
+                fs = table.dt.si.bns
+            }
+            if(!fs){
                 continue
             }
-            if (table.dt.si.fs.ts <= 0) {
+            if (fs.ts <= 0) {
                 continue
             }
             if (firstTs == 0) {
-                firstTs = table.dt.si.fs.ts
+                firstTs = fs.ts
             }
 
-            if (firstTs < table.dt.si.fs.ts) {
-                let num = table.dt.si.fs.ts - firstTs
+            if (firstTs < fs.ts) {
+                let num = fs.ts - firstTs
                 console.log(`检测到免中免,增加${num}次免费`)
                 if(num<=4){
                     return false
