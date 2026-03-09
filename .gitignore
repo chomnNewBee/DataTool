@@ -7,3 +7,4 @@
 /TOOL/pg_slot/node_modules
 /TOOL/pg_slot/.vscode
 /TOOL/pg_slot/assets/pg.yml
+/TOOL/new_pg_res/tool/Constant.ts
