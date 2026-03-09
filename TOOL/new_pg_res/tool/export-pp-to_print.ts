@@ -125,5 +125,5 @@ function readJsonFilesFromDir(dirPath: string, gameName = "") {
 }
 
 
-readJsonFilesFromDir("../data/", "Genies3Wishes")//args[0]?args[0]:"")//args[1])
+readJsonFilesFromDir("../data/", "AlchemyGold")//args[0]?args[0]:"")//args[1])
 
