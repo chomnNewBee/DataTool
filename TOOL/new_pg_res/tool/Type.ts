@@ -25,7 +25,9 @@ export type NormalSpinItem = {
             lwa:number,
             lw:Record<number,number>,
             tw:number,
-            fs:any
+            fs:any,
+            tbb:number,
+            tb:number,
         }
     }
 };

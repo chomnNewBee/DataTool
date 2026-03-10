@@ -68,6 +68,9 @@ class GameConfigMgr {
         GameConfigMgr.addConfig("Genies3Wishes", 8869300, "阿拉丁神灯",false) 
 
 
+        GameConfigMgr.addConfig("FortuneGods", 8872015, "兰州游戏") 
+
+
 
     }
 

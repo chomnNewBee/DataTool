@@ -392,6 +392,39 @@ class CheckSourceFile {
 
     }
 
+    static checkErrorData_FortuneGods(gameName: string) {
+        let entries = Tool.readAllFilesByPath("../data/" + gameName)
+        let errorFiles = new Map<string, NormalSpinItem[]>()
+        for (let childEntrie of entries) {
+            let dataFilePath = path.join(childEntrie.parentPath, childEntrie.name);
+            let datas: NormalSpinItem[] = Tool.readJson(dataFilePath)
+            for (let data of datas) {
+                let tbb100 = (data.dt.si.tbb*100)
+                let tbb100Round = Tool.roundNumber(tbb100)
+
+                let tb100 = (data.dt.si.tb*100)
+                let tb100Round = Tool.roundNumber(tb100)
+                if (tbb100.toString().length == tbb100Round.toString().length &&tb100.toString().length == tb100Round.toString().length) {
+                    continue
+                }
+                 errorFiles.set(dataFilePath, datas)
+            }
+        }
+
+        for (let [filePath, datas] of errorFiles) {
+            for (let item of datas) {
+                item.dt.si.tbb = Tool.roundNumber(item.dt.si.tbb)
+                item.dt.si.tb = Tool.roundNumber(item.dt.si.tb)
+                
+                 
+
+                let content = JSON.stringify(datas.map((o) => JSON.stringify(o)));
+                Tool.writeFile(filePath, content)
+            }
+        }
+        console.log(`有${errorFiles.size}条数据错误`)
+    }
+
 
 
     static checkRemoveFreeNumber(gameName: string) {
