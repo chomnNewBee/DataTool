@@ -38,13 +38,13 @@ class ExtraDetail {
         Tool.printTable(freeBets, "免费倍率数量表:")
 
 
-        
+
         Tool.printArray(freeInFreeBets, "免中免倍率集合:")
         Tool.printTable(freeInFreeBets, "免中免倍率数量表:")
-       // Tool.printServerCfg(freeBets)
+        // Tool.printServerCfg(freeBets)
 
 
-      // Tool.saveServerCfgText(normalBets, freeBets, freeInFreeBets)
+        // Tool.saveServerCfgText(normalBets, freeBets, freeInFreeBets)
 
         return groupFreeInFree
     }
@@ -579,12 +579,12 @@ class ExtraDetail {
             [mode_4_sc4_bets, mode_4_sc5_bets, mode_4_sc6_bets],
         ]
 
-        
+
 
         for (let i = freeData.length - 1; i >= 0; i--) {
             let items = freeData[i]
             for (let item of items) {
-                if(item.dt.si.st !=32){
+                if (item.dt.si.st != 32) {
                     continue
                 }
 
@@ -689,13 +689,13 @@ class ExtraDetail {
         for (let i = 0; i < arr.length; i++) {
             let ar = arr[i]
             for (let j = 0; j < ar.length; j++) {
-              //  if(i == 0 &&j==0)continue
+                //  if(i == 0 &&j==0)continue
                 let bets = ar[j]
                 detail_string1 += Tool.printArray(bets, `免费模式 选项${i + 1} scatter:${j + 4} 出现的倍率:`).replace(/\n/g, "")
 
                 detail_string2 += Tool.printTable(bets, `免费模式 选项${i + 1} scatter:${j + 4} 出现的倍率(个数统计):`).replace(/\n/g, "")
 
-                detail_string3 += Tool.getServerCfgStringByArray(bets) +",\n\n\n"
+                detail_string3 += Tool.getServerCfgStringByArray(bets) + ",\n\n\n"
 
                 detail_string1 += "  "
                 detail_string2 += "  "
@@ -703,9 +703,80 @@ class ExtraDetail {
             }
         }
 
-      
 
-        Tool.writeFile("free_epypt.txt", detail_string1  + detail_string2)
+
+        Tool.writeFile("free_epypt.txt", detail_string1 + detail_string2)
+        Tool.writeFile("free_server.txt", detail_string3)
+    }
+
+    //阿拉丁神灯
+    static getDetail_Genies3Wishes(normalData: NormalSpinItem[][], freeData: NormalSpinItem[][]) {
+        let mode1_count12__bets: number[] = []
+        let mode2_count8__bets: number[] = []
+        let mode3_count5__bets: number[] = []
+
+
+        let arr = [mode1_count12__bets, mode2_count8__bets, mode3_count5__bets]
+
+
+
+        for (let i = freeData.length - 1; i >= 0; i--) {
+            let items = freeData[i]
+            for (let item of items) {
+                if (item.dt.si.st != 3) {
+                    continue
+                }
+
+                let ts = item.dt.si.fs.ts
+
+                if (ts == 12) {
+                    mode1_count12__bets.push(Tool.getWinBet(items))
+                    freeData.splice(i, 1)
+                    break
+                }
+
+                if (ts == 8) {
+                    mode2_count8__bets.push(Tool.getWinBet(items))
+                    freeData.splice(i, 1)
+                    break
+                }
+
+                if (ts == 5) {
+                    mode3_count5__bets.push(Tool.getWinBet(items))
+                    freeData.splice(i, 1)
+                    break
+                }
+
+            
+                console.log("未被分组免费警告!")
+                break
+            }
+        }
+
+        ExtraDetail.getDefaultDetail(normalData, freeData, false)
+        let detail_string1 = "";
+        let detail_string2 = "";
+        let detail_string3 = "";
+        for (let i = 0; i < arr.length; i++) {
+            let bets = arr[i]
+
+            //  if(i == 0 &&j==0)continue
+ 
+            detail_string1 += Tool.printArray(bets, `免费模式 选项${i + 1}  出现的倍率:`).replace(/\n/g, "")
+
+            detail_string2 += Tool.printTable(bets, `免费模式 选项${i + 1}  出现的倍率(个数统计):`).replace(/\n/g, "")
+
+            detail_string3 += Tool.getServerCfgStringByArray(bets) + ",\n\n\n"
+
+            detail_string1 += "  "
+            detail_string2 += "  "
+
+
+        }
+
+
+
+        Tool.writeFile("free_epypt.txt", detail_string1 + detail_string2)
         Tool.writeFile("free_server.txt", detail_string3)
     }
 

@@ -185,13 +185,13 @@ class ReGroup {
                 return "freegame_mode3sc6_8"
             }
 
-            if (bool_free_mode_4_sc4) {
+            if (bool_free_mode_4_sc4) {  
                 return "freegame_mode4sc4_9"
             }
             if (bool_free_mode_4_sc5) {
                 return "freegame_mode4sc5_10"
             }
-            if (bool_free_mode_4_sc6) {
+            if (bool_free_mode_4_sc6) { 
                 return "freegame_mode4sc6_11"
             }
             if (data.dt.si.sc == 6) {
@@ -205,14 +205,27 @@ class ReGroup {
         return ""
     }
 
-    static ReGroup_Genies3Wishes(datas: EgyptBookOfMysteryItem[]) {
-
+    static ReGroup_Genies3Wishes(datas: NormalSpinItem[]) {
         for (let data of datas) {
-            
+
+            if (data.dt.si.st != 3) {
+                continue
+            }
+
+            if (data.dt.si.fs.ts == 12) {
+                return "freegame"//freegame_count12_1
+            }
+
+            if (data.dt.si.fs.ts == 8) {
+                return "freegame_mode2count8_1"
+            }
+
+            if (data.dt.si.fs.ts == 5) {
+                return "freegame_mode3count5_2"
+            }
 
             return ""
         }
-
 
         return ""
     }

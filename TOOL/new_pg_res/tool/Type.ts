@@ -11,6 +11,7 @@ export type GameConfig = Array<GameConfigItem>
 export type NormalSpinItem = {
     dt: {
         si: {
+            aw:number,
             hashr: string,
             sid: string,
             psid: string,

@@ -65,9 +65,7 @@ class GameConfigMgr {
         GameConfigMgr.addConfig("GeishasRevenge", 8868100, "艺技之刃") 
         GameConfigMgr.addConfig("EmperorsFavour", 8873830, "皇上吉祥") 
         GameConfigMgr.addConfig("PlushieFrenzy", 8873730, "抓抓乐") 
-        GameConfigMgr.addConfig("Genies3Wishes", 8873730, "阿拉丁神灯",false) 
-        GameConfigMgr.addConfig("AlchemyGold", 8869400, "炼金工房")
-        GameConfigMgr.addConfig("MajesticTreasures", 8869500, "宝石传奇")
+        GameConfigMgr.addConfig("Genies3Wishes", 8869300, "阿拉丁神灯",false) 
 
 
 
