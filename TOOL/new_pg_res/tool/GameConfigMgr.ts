@@ -69,6 +69,20 @@ class GameConfigMgr {
 
 
         GameConfigMgr.addConfig("FortuneGods", 8872015, "兰州游戏") 
+        GameConfigMgr.addConfig("HeistStakes", 8869600, "霹雳神偷")
+        GameConfigMgr.addConfig("UltimateStriker", 8869700, "金球射手")
+        GameConfigMgr.addConfig("TheQueensBanquet", 8869900, "韩宫御宴")
+        GameConfigMgr.addConfig("RaiderJanesCryptofFortune", 8870200, "丽影奇兵之探秘埃及")
+        GameConfigMgr.addConfig("WildHeistCashout", 8870300, "怪盗神偷",false)
+        GameConfigMgr.addConfig("GladiatorsGlory", 8871700, "角斗士荣耀")
+        GameConfigMgr.addConfig("SpiritedWonders", 8872400, "百鬼夜行")
+        GameConfigMgr.addConfig("NinjaRaccoonFrenzy", 8872500, "忍者小浣熊")
+        GameConfigMgr.addConfig("SecretsofCleopatra", 8872700, "艳后之谜")
+        GameConfigMgr.addConfig("MermaidRiches", 8872800, "人鱼公主")
+        GameConfigMgr.addConfig("MaskCarnival", 8873100, "假面嘉年华",false)
+        GameConfigMgr.addConfig("EmojiRiches", 8873600, "钞级表情包")
+        GameConfigMgr.addConfig("GemSaviourConquest", 8873900, "宝石侠宝藏征途")
+        GameConfigMgr.addConfig("Medusa", 8870430, "美杜莎雅典娜的诅咒",false)
 
 
 
